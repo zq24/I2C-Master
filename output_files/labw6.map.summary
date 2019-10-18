@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Oct 18 00:45:04 2019
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : labw6
+Top-level Entity Name : labw6
+Family : MAX 10
+Total logic elements : 53
+    Total combinational functions : 49
+    Dedicated logic registers : 26
+Total registers : 26
+Total pins : 46
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

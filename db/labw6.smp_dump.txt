@@ -1,0 +1,20 @@
+
+State Machine - |labw6|state
+Name state.slave_state_1 state.slave_state state.clk_L_2 state.clk_L_1 state.clk_L_0 state.clk_H_2 state.clk_H_1 state.clk_H_0 state.wait_key state.end_state_2 state.end_state_1 state.end_state_0 state.start_state_1 state.start_state_0 state.logic_1 state.logic_0 state.Idle 
+state.Idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.logic_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.logic_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.start_state_0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.start_state_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.end_state_0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.end_state_1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.end_state_2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.wait_key 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.clk_H_0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.clk_H_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.clk_H_2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.clk_L_0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.clk_L_1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.clk_L_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.slave_state 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.slave_state_1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

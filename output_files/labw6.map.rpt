@@ -1,0 +1,452 @@
+Analysis & Synthesis report for labw6
+Fri Oct 18 00:45:04 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |labw6|state
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 18 00:45:04 2019       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; labw6                                       ;
+; Top-level Entity Name              ; labw6                                       ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 53                                          ;
+;     Total combinational functions  ; 49                                          ;
+;     Dedicated logic registers      ; 26                                          ;
+; Total registers                    ; 26                                          ;
+; Total pins                         ; 46                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                                      ; labw6              ; labw6              ;
+; Family name                                                                ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                ;
++----------------------------------+-----------------+-----------------+--------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path         ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------+---------+
+; labw6.vhd                        ; yes             ; User VHDL File  ; C:/intelFPGA_lite/17.1/I2C/labw6.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 53             ;
+;                                             ;                ;
+; Total combinational functions               ; 49             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 28             ;
+;     -- 3 input functions                    ; 10             ;
+;     -- <=2 input functions                  ; 11             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 45             ;
+;     -- arithmetic mode                      ; 4              ;
+;                                             ;                ;
+; Total registers                             ; 26             ;
+;     -- Dedicated logic registers            ; 26             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 46             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 26             ;
+; Total fan-out                               ; 317            ;
+; Average fan-out                             ; 1.59           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |labw6                     ; 49 (49)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 46   ; 0            ; 0          ; |labw6              ; labw6       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |labw6|state                                                                                                                                                                                                                                                                                                        ;
++---------------------+---------------------+-------------------+---------------+---------------+---------------+---------------+---------------+---------------+----------------+-------------------+-------------------+-------------------+---------------------+---------------------+---------------+---------------+------------+
+; Name                ; state.slave_state_1 ; state.slave_state ; state.clk_L_2 ; state.clk_L_1 ; state.clk_L_0 ; state.clk_H_2 ; state.clk_H_1 ; state.clk_H_0 ; state.wait_key ; state.end_state_2 ; state.end_state_1 ; state.end_state_0 ; state.start_state_1 ; state.start_state_0 ; state.logic_1 ; state.logic_0 ; state.Idle ;
++---------------------+---------------------+-------------------+---------------+---------------+---------------+---------------+---------------+---------------+----------------+-------------------+-------------------+-------------------+---------------------+---------------------+---------------+---------------+------------+
+; state.Idle          ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 0          ;
+; state.logic_0       ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 1             ; 1          ;
+; state.logic_1       ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 1             ; 0             ; 1          ;
+; state.start_state_0 ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 1                   ; 0             ; 0             ; 1          ;
+; state.start_state_1 ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 1                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.end_state_0   ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 1                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.end_state_1   ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 1                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.end_state_2   ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 1                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.wait_key      ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_H_0       ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_H_1       ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_H_2       ; 0                   ; 0                 ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_L_0       ; 0                   ; 0                 ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_L_1       ; 0                   ; 0                 ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.clk_L_2       ; 0                   ; 0                 ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.slave_state   ; 0                   ; 1                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
+; state.slave_state_1 ; 1                   ; 0                 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0              ; 0                 ; 0                 ; 0                 ; 0                   ; 0                   ; 0             ; 0             ; 1          ;
++---------------------+---------------------+-------------------+---------------+---------------+---------------+---------------+---------------+---------------+----------------+-------------------+-------------------+-------------------+---------------------+---------------------+---------------+---------------+------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 26    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Number[2]                              ; 3       ;
+; Number[1]                              ; 3       ;
+; Number[0]                              ; 3       ;
+; Number[3]                              ; 6       ;
+; Number[4]                              ; 6       ;
+; Total number of inverted registers = 5 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |labw6|Number[3]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 46                          ;
+; cycloneiii_ff         ; 26                          ;
+;     ENA               ; 4                           ;
+;     SCLR              ; 15                          ;
+;     plain             ; 7                           ;
+; cycloneiii_io_obuf    ; 33                          ;
+; cycloneiii_lcell_comb ; 50                          ;
+;     arith             ; 4                           ;
+;         2 data inputs ; 4                           ;
+;     normal            ; 46                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 28                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.59                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Fri Oct 18 00:44:52 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off labw6 -c labw6
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file labw6.vhd
+    Info (12022): Found design unit 1: labw6-behavior File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 15
+    Info (12023): Found entity 1: labw6 File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 6
+Info (12127): Elaborating entity "labw6" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at labw6.vhd(11): used implicit default value for signal "state_vector" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+Warning (10492): VHDL Process Statement warning at labw6.vhd(34): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at labw6.vhd(40): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at labw6.vhd(45): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at labw6.vhd(45): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at labw6.vhd(46): signal "old_key_next" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at labw6.vhd(46): signal "old_key" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at labw6.vhd(58): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at labw6.vhd(58): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at labw6.vhd(66): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at labw6.vhd(75): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at labw6.vhd(83): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at labw6.vhd(91): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at labw6.vhd(92): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at labw6.vhd(93): signal "data_sig_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at labw6.vhd(93): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at labw6.vhd(95): signal "data_sig_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at labw6.vhd(95): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at labw6.vhd(98): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at labw6.vhd(103): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at labw6.vhd(105): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at labw6.vhd(106): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at labw6.vhd(108): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at labw6.vhd(118): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at labw6.vhd(119): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at labw6.vhd(120): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at labw6.vhd(122): signal "Number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at labw6.vhd(129): signal "slave_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at labw6.vhd(131): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at labw6.vhd(132): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at labw6.vhd(137): signal "slave_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 137
+Warning (10492): VHDL Process Statement warning at labw6.vhd(139): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 139
+Warning (10492): VHDL Process Statement warning at labw6.vhd(140): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at labw6.vhd(147): signal "slave_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at labw6.vhd(149): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 149
+Warning (10492): VHDL Process Statement warning at labw6.vhd(150): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at labw6.vhd(155): signal "slave_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at labw6.vhd(157): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at labw6.vhd(158): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at labw6.vhd(166): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at labw6.vhd(167): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at labw6.vhd(168): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at labw6.vhd(170): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at labw6.vhd(178): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at labw6.vhd(179): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 179
+Warning (10492): VHDL Process Statement warning at labw6.vhd(186): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at labw6.vhd(187): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at labw6.vhd(195): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 195
+Warning (10492): VHDL Process Statement warning at labw6.vhd(196): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at labw6.vhd(196): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at labw6.vhd(203): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at labw6.vhd(204): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 204
+Warning (10492): VHDL Process Statement warning at labw6.vhd(212): signal "dat_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 212
+Warning (10492): VHDL Process Statement warning at labw6.vhd(212): signal "clk_line" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 212
+Warning (10492): VHDL Process Statement warning at labw6.vhd(219): signal "old_key_next" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 219
+Warning (10492): VHDL Process Statement warning at labw6.vhd(219): signal "old_key" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 219
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver. File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver. File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[2]~synth" File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+    Warning (13010): Node "GPIO_0[3]~synth" File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "state_vector[0]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[1]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[2]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[3]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[4]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[5]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[6]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+    Warning (13410): Pin "state_vector[7]" is stuck at GND File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/intelFPGA_lite/17.1/I2C/labw6.vhd Line: 9
+Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21060): Implemented 33 bidirectional pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
+    Info: Peak virtual memory: 653 megabytes
+    Info: Processing ended: Fri Oct 18 00:45:04 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
+
+
